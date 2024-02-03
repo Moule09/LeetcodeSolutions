@@ -1,0 +1,27 @@
+Maximum consecutive one’s (or zeros) in a binary array
+
+import java.util.*;
+
+public class MaximumConsecutiveOnes {
+	public static void main(String[] args) {
+		int arr[] = { 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0 };
+		int max_ones = Integer.MIN_VALUE;
+		int min_ones=Integer.MAX_VALUE;
+		int ones = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 1) {
+				ones++;
+				if (ones > max_ones) {
+					max_ones = ones;
+				}
+				if(ones<min_ones) {
+					min_ones=ones;
+				}
+			} else {
+				ones = 0;
+			}
+		}
+		System.out.println(max_ones);
+		System.out.println(min_ones);
+	}
+}
