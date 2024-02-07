@@ -1,0 +1,22 @@
+-- Uncommon Words from Two Sentences
+class Solution {
+    public String[] uncommonFromSentences(String s1, String s2) {
+        String s3=s1+" "+s2;
+		String [] words =s3.split(" ");
+		HashMap<String,Integer> wordcount=new HashMap<>();
+		for(String word :words) {
+			if(wordcount.containsKey(word)) {
+				wordcount.put(word, wordcount.get(word)+1);
+			}else {
+				wordcount.put(word,1);
+			}
+		}
+		ArrayList<String> uncommonWords = new ArrayList<String>();
+		for(Map.Entry<String,Integer> mapElement:wordcount.entrySet()) {
+			if(mapElement.getValue()==1) {
+				uncommonWords.add(mapElement.getKey());
+			}
+		}
+        return uncommonWords.toArray(new String[0]);
+    }
+}
