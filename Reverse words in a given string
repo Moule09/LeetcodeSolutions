@@ -1,0 +1,16 @@
+Reverse words in a given string
+class Solution 
+{
+    //Function to reverse words in a given string.
+    String reverseWords(String S)
+    {
+       	StringBuilder revestr = new StringBuilder(S);
+		String st[] = revestr.reverse().toString().split("\\.",0);
+		String fin="";
+		for(String x:st) {
+			StringBuilder rev=new StringBuilder(x).reverse();
+			fin=fin+rev.toString()+".";
+		}
+		return fin.substring(0,fin.length()-1);
+    }
+}
