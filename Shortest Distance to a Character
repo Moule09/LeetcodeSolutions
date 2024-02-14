@@ -1,0 +1,23 @@
+Shortest Distance to a Character
+class Solution {
+    public int[] shortestToChar(String s, char c) {
+        ArrayList<Integer> charCountIndex = new ArrayList<Integer>();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == c)
+				charCountIndex.add(i);
+		}
+		int newarr[]=new int[s.length()];
+		int min=Integer.MAX_VALUE;
+		for(int i=0;i<newarr.length;i++) {
+			for(int j=0;j<charCountIndex.size();j++) {
+				int val =Math.abs(i-charCountIndex.get(j));
+				if(val<min) {
+					min=val;
+				}
+			}
+			newarr[i]=min;
+			min=Integer.MAX_VALUE;
+		}
+        return newarr;
+    }
+}
