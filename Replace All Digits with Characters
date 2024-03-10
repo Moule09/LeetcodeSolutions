@@ -1,0 +1,21 @@
+Replace All Digits with Characters
+class Solution {
+    public String replaceDigits(String s) {
+        String newstr = "";
+		int val1 = 0;
+		int n = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (Character.isDigit(s.charAt(i))) {
+				val1 = (int) s.charAt(i - 1);
+				n = Integer.parseInt(String.valueOf(s.charAt(i)));
+				val1=val1+n;
+				newstr=newstr+((char)val1);
+				
+			} else {
+				newstr = newstr + s.charAt(i);
+			}
+		}
+
+		return newstr;
+    }
+}
