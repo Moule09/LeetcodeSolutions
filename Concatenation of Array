@@ -11,3 +11,15 @@ class Solution {
         return newarr;
     }
 }
+
+
+-- 
+Runtime -- 0ms
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int ansarr[]=new int[nums.length*2];
+        System.arraycopy(nums, 0, ansarr, 0, nums.length);
+		System.arraycopy(nums, 0, ansarr, nums.length, nums.length);
+        return ansarr;
+    }
+}
