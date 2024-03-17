@@ -1,0 +1,18 @@
+class Solution {
+    public String interpret(String command) {
+        String output ="";
+		for(int i=0;i<command.length();i++) {
+			if(command.charAt(i)=='G')
+				output+='G';
+			if(command.charAt(i) =='(' && command.charAt(i+1)==')') {
+				output+='o';
+				i++;
+			}
+			if(command.charAt(i)=='(' && command.charAt(i+1)=='a') {
+				output+="al";
+				i=i+2;
+			}
+        }
+        return output;
+	}
+}
