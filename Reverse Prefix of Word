@@ -1,0 +1,16 @@
+Reverse Prefix of Word
+class Solution {
+    public String reversePrefix(String word, char ch) {
+        int ex=word.indexOf(ch);
+        StringBuilder fin_ans = new StringBuilder();
+        String ans="";
+        if(ex!=-1){   
+            ex++;
+            ans=word.substring(0,ex);
+            fin_ans.append(ans).reverse();
+            return fin_ans.toString()+word.substring(ex);
+        }else{
+            return word;
+        }
+    }
+}
