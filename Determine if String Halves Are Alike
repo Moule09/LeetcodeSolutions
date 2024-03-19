@@ -1,0 +1,32 @@
+ Determine if String Halves Are Alike
+
+class Solution {
+    public static boolean vowels(char x) {
+        if (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u' || x == 'A' || x == 'E' || x == 'I' || x == 'O'
+                || x == 'U') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean halvesAreAlike(String s) {
+        int i = 0;
+        int j = s.length() - 1;
+        int firsthalf = 0, seconfhalf = 0;
+        while (i <= j) {
+            if (vowels(s.charAt(i))) {
+                firsthalf++;
+            }
+            if (vowels(s.charAt(j))) {
+                seconfhalf++;
+            }
+            i++;
+            j--;
+        }
+        if (firsthalf == seconfhalf) {
+            return true;
+        }
+        return false;
+    }
+}
