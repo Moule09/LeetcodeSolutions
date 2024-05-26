@@ -1,0 +1,14 @@
+class Solution {
+    public int prefixCount(String[] words, String pref) {
+        int count = pref.length();
+        int No_of_Element = 0;
+        for (String Ele : words) {
+            if (Ele.length() >= pref.length()) {
+                if (Ele.substring(0, count).equals( pref)) {
+                    No_of_Element++;
+                }
+            }
+        }
+        return No_of_Element;
+    }
+}
